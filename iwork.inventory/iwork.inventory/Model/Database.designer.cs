@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iwork.inventory.Model
+namespace iwork.autobits.inventory.Model
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -51,7 +51,7 @@ namespace iwork.inventory.Model
     #endregion
 		
 		public DatabaseDataContext() : 
-				base(global::iwork.inventory.Properties.Settings.Default.ReUsableDBWinformConnectionString, mappingSource)
+				base(global::iwork.autobits.inventory.Properties.Settings.Default.ReUsableDBWinformConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

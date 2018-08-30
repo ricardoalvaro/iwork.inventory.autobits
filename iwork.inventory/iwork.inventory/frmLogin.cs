@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iwork.inventory.Model;
+using iwork.autobits.inventory.Model;
 
 namespace iwork.inventory
 {

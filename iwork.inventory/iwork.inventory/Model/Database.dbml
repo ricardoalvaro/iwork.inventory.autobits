@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ReUsableDBWinform" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=WINDOWS-PC\MSSQLSERVER2012;Initial Catalog=ReUsableDBWinform;Persist Security Info=True;User ID=sa" SettingsObjectName="iwork.inventory.Properties.Settings" SettingsPropertyName="ReUsableDBWinformConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WINDOWS-PC\MSSQLSERVER2012;Initial Catalog=ReUsableDBWinform;Persist Security Info=True;User ID=sa" SettingsObjectName="iwork.autobits.inventory.Properties.Settings" SettingsPropertyName="ReUsableDBWinformConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.RolePermission" Member="RolePermissions">
     <Type Name="RolePermission">
       <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

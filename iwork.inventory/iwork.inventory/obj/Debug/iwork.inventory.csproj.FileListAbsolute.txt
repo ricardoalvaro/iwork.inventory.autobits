@@ -16,3 +16,6 @@ C:\Users\sa\Desktop\InventoryManagement\iwork.inventory\iwork.inventory\obj\Debu
 C:\Users\sa\Desktop\InventoryManagement\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmTransaction.resources
 C:\Users\sa\Desktop\InventoryManagement\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmHistory.resources
 C:\Users\sa\Desktop\InventoryManagement\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmReports.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\bin\Debug\iwork.inventory.exe.config
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.exe
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.pdb

@@ -1,0 +1,17 @@
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmHelp.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmHistory.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmLogin.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmProducts.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmProductsManage.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmReports.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmTransaction.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmUsers.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.frmUsersManage.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.inventory.MDIMaster.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.autobits.inventory.Properties.Resources.resources
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.autobits.inventory.csproj.GenerateResource.Cache
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\bin\Debug\iwork.autobits.inventory.exe.config
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\bin\Debug\iwork.autobits.inventory.exe
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\bin\Debug\iwork.autobits.inventory.pdb
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.autobits.inventory.exe
+C:\Users\sa\Desktop\iwork.inventory.autobits\iwork.inventory\iwork.inventory\obj\Debug\iwork.autobits.inventory.pdb

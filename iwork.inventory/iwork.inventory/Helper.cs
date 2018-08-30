@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iwork.inventory.Model;
+using iwork.autobits.inventory.Model;
 using System.Windows.Forms;
 
 namespace iwork.inventory

@@ -1,4 +1,4 @@
-﻿using iwork.inventory.Model;
+﻿using iwork.autobits.inventory.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

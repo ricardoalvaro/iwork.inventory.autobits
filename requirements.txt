@@ -1,0 +1,51 @@
+supplier
+Sales
+
+Manual Entry SINO/OR
+--------------------------------
+Payment Type
+Cash 
+credit card
+Cheque
+----------------------------
+SINO 123 199 Remarks 
+------------------------------
+
+1 itlog
+1 cape
+1 kamatis 100-120
+-------------------------------
+
+SINO = Gross: 140
+ NET: 40
+----------------------------------
+Total : 
+
+--------------------------------
+Sales VOID
+
+----------------------------------------------------
+Customer details
+-----------------------------------------------------
+Report 
+Transaction - Supplier
+Sales Report= Total Gross / Total NET
+
+Expense Report 1000/supplier payment
+----------------------------------------------------
+Summary - SALES - EXPENSES
+----------------------------------------------------
+
+aug 30 sales   == 1000
+aug 30 expenses =100
+--------------------------------------
+	= 900
+	=
+------------------------------------------
+Expense Type : Meeting with Client
+Amount: 7000
+SAVE
+----------------------------------
+
+
+
