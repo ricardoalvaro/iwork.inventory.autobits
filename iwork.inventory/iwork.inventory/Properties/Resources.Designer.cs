@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iwork.autobits.inventory.Properties {
+namespace  iwork.autobits.inventory.Properties {
     using System;
     
     

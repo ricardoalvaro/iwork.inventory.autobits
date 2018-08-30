@@ -1,4 +1,4 @@
-﻿using iwork.autobits.inventory.Model;
+﻿using  iwork.autobits.inventory.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace iwork.inventory
+namespace  iwork.autobits.inventory
 {
     public partial class frmReports : Form
     {
@@ -38,7 +38,7 @@ namespace iwork.inventory
             int counter = 0;
             foreach (var d in data)
             {
-                grv.Rows.Add(d.Code, d.Description, d.QtyIn.Value.ToString("N"), d.QtyOut.Value.ToString("N"), d.QtyAdjustment.Value.ToString("N"), d.QtyCurrent.Value.ToString("N"), d.CreatedDate.Value.ToString("MMM-dd-yyyy"), d.Remarks, d.Name);
+                grv.Rows.Add(d.Code, d.Description, d.SupCus, d.TransType, d.QtyIn.Value.ToString("N"), d.QtyOut.Value.ToString("N"), d.QtyAdjustment.Value.ToString("N"), d.QtyCurrent.Value.ToString("N"), d.CreatedDate.Value.ToString("MMM-dd-yyyy"), d.Remarks, d.Name);
                 counter++;
             }
             lblCount.Text = counter.ToString();

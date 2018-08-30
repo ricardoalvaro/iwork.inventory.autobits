@@ -1,4 +1,4 @@
-﻿namespace iwork.inventory
+﻿namespace  iwork.autobits.inventory
 {
     partial class frmReports
     {
@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReports));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtTo = new System.Windows.Forms.DateTimePicker();
             this.dtFrom = new System.Windows.Forms.DateTimePicker();
@@ -47,6 +51,8 @@
             this.grv = new System.Windows.Forms.DataGridView();
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockOUT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockADJUST = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +78,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1333, 162);
+            this.panel3.Size = new System.Drawing.Size(1415, 162);
             this.panel3.TabIndex = 45;
             // 
             // dtTo
@@ -230,11 +236,23 @@
             // 
             this.grv.AllowUserToAddRows = false;
             this.grv.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grv.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Code,
             this.Description,
+            this.Column2,
+            this.Column1,
             this.Stock,
             this.StockOUT,
             this.StockADJUST,
@@ -242,29 +260,52 @@
             this.LastTransaction,
             this.Remarks,
             this.Namex});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grv.DefaultCellStyle = dataGridViewCellStyle3;
             this.grv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grv.Location = new System.Drawing.Point(0, 162);
             this.grv.MultiSelect = false;
             this.grv.Name = "grv";
             this.grv.ReadOnly = true;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grv.Size = new System.Drawing.Size(1333, 270);
+            this.grv.Size = new System.Drawing.Size(1415, 270);
             this.grv.TabIndex = 46;
             // 
             // Code
             // 
-            this.Code.HeaderText = "Code";
+            this.Code.HeaderText = "CODE";
             this.Code.Name = "Code";
             this.Code.ReadOnly = true;
-            this.Code.Width = 150;
+            this.Code.Width = 250;
             // 
             // Description
             // 
-            this.Description.HeaderText = "Description";
+            this.Description.HeaderText = "DESC";
             this.Description.MinimumWidth = 50;
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
-            this.Description.Width = 150;
+            this.Description.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "ACCOUNT";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 300;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "TYPE";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Stock
             // 
@@ -295,21 +336,21 @@
             // 
             // LastTransaction
             // 
-            this.LastTransaction.HeaderText = "Last Transaction";
+            this.LastTransaction.HeaderText = "DATE";
             this.LastTransaction.Name = "LastTransaction";
             this.LastTransaction.ReadOnly = true;
             this.LastTransaction.Width = 200;
             // 
             // Remarks
             // 
-            this.Remarks.HeaderText = "Remarks";
+            this.Remarks.HeaderText = "REMARKS";
             this.Remarks.Name = "Remarks";
             this.Remarks.ReadOnly = true;
             this.Remarks.Width = 300;
             // 
             // Namex
             // 
-            this.Namex.HeaderText = "Name";
+            this.Namex.HeaderText = "CREATOR";
             this.Namex.Name = "Namex";
             this.Namex.ReadOnly = true;
             this.Namex.Width = 200;
@@ -319,7 +360,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1333, 432);
+            this.ClientSize = new System.Drawing.Size(1415, 432);
             this.Controls.Add(this.grv);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,6 +399,8 @@
         private System.Windows.Forms.DataGridView grv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Code;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockOUT;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockADJUST;

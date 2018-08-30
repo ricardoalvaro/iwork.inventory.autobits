@@ -22,7 +22,7 @@ namespace iwork.autobits.inventory.Model
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ReUsableDBWinform")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AutoBitsInventory")]
 	public partial class DatabaseDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -42,12 +42,27 @@ namespace iwork.autobits.inventory.Model
     partial void InsertSystemForm(SystemForm instance);
     partial void UpdateSystemForm(SystemForm instance);
     partial void DeleteSystemForm(SystemForm instance);
-    partial void InsertProductHistory(ProductHistory instance);
-    partial void UpdateProductHistory(ProductHistory instance);
-    partial void DeleteProductHistory(ProductHistory instance);
+    partial void InsertExpense(Expense instance);
+    partial void UpdateExpense(Expense instance);
+    partial void DeleteExpense(Expense instance);
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
+    partial void InsertSale(Sale instance);
+    partial void UpdateSale(Sale instance);
+    partial void DeleteSale(Sale instance);
+    partial void InsertSaleDetail(SaleDetail instance);
+    partial void UpdateSaleDetail(SaleDetail instance);
+    partial void DeleteSaleDetail(SaleDetail instance);
+    partial void InsertCustomer(Customer instance);
+    partial void UpdateCustomer(Customer instance);
+    partial void DeleteCustomer(Customer instance);
+    partial void InsertProductHistory(ProductHistory instance);
+    partial void UpdateProductHistory(ProductHistory instance);
+    partial void DeleteProductHistory(ProductHistory instance);
+    partial void InsertSupplier(Supplier instance);
+    partial void UpdateSupplier(Supplier instance);
+    partial void DeleteSupplier(Supplier instance);
     #endregion
 		
 		public DatabaseDataContext() : 
@@ -112,11 +127,11 @@ namespace iwork.autobits.inventory.Model
 			}
 		}
 		
-		public System.Data.Linq.Table<ProductHistory> ProductHistories
+		public System.Data.Linq.Table<Expense> Expenses
 		{
 			get
 			{
-				return this.GetTable<ProductHistory>();
+				return this.GetTable<Expense>();
 			}
 		}
 		
@@ -125,6 +140,46 @@ namespace iwork.autobits.inventory.Model
 			get
 			{
 				return this.GetTable<Product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Sale> Sales
+		{
+			get
+			{
+				return this.GetTable<Sale>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SaleDetail> SaleDetails
+		{
+			get
+			{
+				return this.GetTable<SaleDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Customer> Customers
+		{
+			get
+			{
+				return this.GetTable<Customer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ProductHistory> ProductHistories
+		{
+			get
+			{
+				return this.GetTable<ProductHistory>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Supplier> Suppliers
+		{
+			get
+			{
+				return this.GetTable<Supplier>();
 			}
 		}
 		
@@ -180,20 +235,6 @@ namespace iwork.autobits.inventory.Model
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ProductStockIn")]
-		public int ProductStockIn([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="BigInt")] System.Nullable<long> productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QtyIn", DbType="Money")] System.Nullable<decimal> qtyIn, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Remarks", DbType="VarChar(50)")] string remarks, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="VarChar(50)")] string name)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID, qtyIn, remarks, name);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ProductStockOut")]
-		public int ProductStockOut([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="BigInt")] System.Nullable<long> productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QtyOut", DbType="Money")] System.Nullable<decimal> qtyOut, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Remarks", DbType="VarChar(50)")] string remarks, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="VarChar(50)")] string name)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID, qtyOut, remarks, name);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ProductUpdate")]
 		public int ProductUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="BigInt")] System.Nullable<long> iD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Code", DbType="VarChar(500)")] string code, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Description", DbType="VarChar(MAX)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Notes", DbType="VarChar(MAX)")] string notes, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cost", DbType="Money")] System.Nullable<decimal> cost, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Money")] System.Nullable<decimal> price)
 		{
@@ -220,6 +261,27 @@ namespace iwork.autobits.inventory.Model
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productCode, from, to);
 			return ((ISingleResult<ProductHistorySelectRangeResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ProductStockIn")]
+		public int ProductStockIn([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="BigInt")] System.Nullable<long> productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QtyIn", DbType="Money")] System.Nullable<decimal> qtyIn, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Remarks", DbType="VarChar(50)")] string remarks, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="VarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Supplier", DbType="VarChar(500)")] string supplier)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID, qtyIn, remarks, name, supplier);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ProductStockOut")]
+		public int ProductStockOut([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="BigInt")] System.Nullable<long> productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QtyOut", DbType="Money")] System.Nullable<decimal> qtyOut, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Customer", DbType="VarChar(500)")] string customer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Remarks", DbType="VarChar(50)")] string remarks, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="VarChar(50)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID, qtyOut, customer, remarks, name);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ProductStockInVOID")]
+		public int ProductStockInVOID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="BigInt")] System.Nullable<long> productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QtyIn", DbType="Money")] System.Nullable<decimal> qtyIn, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="VarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Customer", DbType="VarChar(500)")] string customer)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID, qtyIn, name, customer);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -951,27 +1013,17 @@ namespace iwork.autobits.inventory.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductHistory")]
-	public partial class ProductHistory : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Expense")]
+	public partial class Expense : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private long _ID;
 		
-		private System.Nullable<long> _ProductID;
+		private string _ExpenseType;
 		
-		private System.Nullable<decimal> _QtyIn;
-		
-		private System.Nullable<decimal> _QtyOut;
-		
-		private System.Nullable<decimal> _QtyAdjustment;
-		
-		private System.Nullable<decimal> _QtyCurrent;
-		
-		private string _Remarks;
-		
-		private string _Name;
+		private System.Nullable<decimal> _Amount;
 		
 		private System.Nullable<System.DateTime> _CreatedDate;
 		
@@ -981,25 +1033,15 @@ namespace iwork.autobits.inventory.Model
     partial void OnCreated();
     partial void OnIDChanging(long value);
     partial void OnIDChanged();
-    partial void OnProductIDChanging(System.Nullable<long> value);
-    partial void OnProductIDChanged();
-    partial void OnQtyInChanging(System.Nullable<decimal> value);
-    partial void OnQtyInChanged();
-    partial void OnQtyOutChanging(System.Nullable<decimal> value);
-    partial void OnQtyOutChanged();
-    partial void OnQtyAdjustmentChanging(System.Nullable<decimal> value);
-    partial void OnQtyAdjustmentChanged();
-    partial void OnQtyCurrentChanging(System.Nullable<decimal> value);
-    partial void OnQtyCurrentChanged();
-    partial void OnRemarksChanging(string value);
-    partial void OnRemarksChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
+    partial void OnExpenseTypeChanging(string value);
+    partial void OnExpenseTypeChanged();
+    partial void OnAmountChanging(System.Nullable<decimal> value);
+    partial void OnAmountChanged();
     partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
     partial void OnCreatedDateChanged();
     #endregion
 		
-		public ProductHistory()
+		public Expense()
 		{
 			OnCreated();
 		}
@@ -1024,147 +1066,47 @@ namespace iwork.autobits.inventory.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="BigInt")]
-		public System.Nullable<long> ProductID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpenseType", DbType="VarChar(MAX)")]
+		public string ExpenseType
 		{
 			get
 			{
-				return this._ProductID;
+				return this._ExpenseType;
 			}
 			set
 			{
-				if ((this._ProductID != value))
+				if ((this._ExpenseType != value))
 				{
-					this.OnProductIDChanging(value);
+					this.OnExpenseTypeChanging(value);
 					this.SendPropertyChanging();
-					this._ProductID = value;
-					this.SendPropertyChanged("ProductID");
-					this.OnProductIDChanged();
+					this._ExpenseType = value;
+					this.SendPropertyChanged("ExpenseType");
+					this.OnExpenseTypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtyIn", DbType="Money")]
-		public System.Nullable<decimal> QtyIn
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Money")]
+		public System.Nullable<decimal> Amount
 		{
 			get
 			{
-				return this._QtyIn;
+				return this._Amount;
 			}
 			set
 			{
-				if ((this._QtyIn != value))
+				if ((this._Amount != value))
 				{
-					this.OnQtyInChanging(value);
+					this.OnAmountChanging(value);
 					this.SendPropertyChanging();
-					this._QtyIn = value;
-					this.SendPropertyChanged("QtyIn");
-					this.OnQtyInChanged();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtyOut", DbType="Money")]
-		public System.Nullable<decimal> QtyOut
-		{
-			get
-			{
-				return this._QtyOut;
-			}
-			set
-			{
-				if ((this._QtyOut != value))
-				{
-					this.OnQtyOutChanging(value);
-					this.SendPropertyChanging();
-					this._QtyOut = value;
-					this.SendPropertyChanged("QtyOut");
-					this.OnQtyOutChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtyAdjustment", DbType="Money")]
-		public System.Nullable<decimal> QtyAdjustment
-		{
-			get
-			{
-				return this._QtyAdjustment;
-			}
-			set
-			{
-				if ((this._QtyAdjustment != value))
-				{
-					this.OnQtyAdjustmentChanging(value);
-					this.SendPropertyChanging();
-					this._QtyAdjustment = value;
-					this.SendPropertyChanged("QtyAdjustment");
-					this.OnQtyAdjustmentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtyCurrent", DbType="Money")]
-		public System.Nullable<decimal> QtyCurrent
-		{
-			get
-			{
-				return this._QtyCurrent;
-			}
-			set
-			{
-				if ((this._QtyCurrent != value))
-				{
-					this.OnQtyCurrentChanging(value);
-					this.SendPropertyChanging();
-					this._QtyCurrent = value;
-					this.SendPropertyChanged("QtyCurrent");
-					this.OnQtyCurrentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remarks", DbType="VarChar(50)")]
-		public string Remarks
-		{
-			get
-			{
-				return this._Remarks;
-			}
-			set
-			{
-				if ((this._Remarks != value))
-				{
-					this.OnRemarksChanging(value);
-					this.SendPropertyChanging();
-					this._Remarks = value;
-					this.SendPropertyChanged("Remarks");
-					this.OnRemarksChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="Date")]
 		public System.Nullable<System.DateTime> CreatedDate
 		{
 			get
@@ -1410,6 +1352,1132 @@ namespace iwork.autobits.inventory.Model
 					this._DateCreated = value;
 					this.SendPropertyChanged("DateCreated");
 					this.OnDateCreatedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sale")]
+	public partial class Sale : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _ID;
+		
+		private string _SIOR;
+		
+		private System.Nullable<long> _CustomerID;
+		
+		private string _CustomerName;
+		
+		private string _PaymentType;
+		
+		private string _Remarks;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(long value);
+    partial void OnIDChanged();
+    partial void OnSIORChanging(string value);
+    partial void OnSIORChanged();
+    partial void OnCustomerIDChanging(System.Nullable<long> value);
+    partial void OnCustomerIDChanged();
+    partial void OnCustomerNameChanging(string value);
+    partial void OnCustomerNameChanged();
+    partial void OnPaymentTypeChanging(string value);
+    partial void OnPaymentTypeChanged();
+    partial void OnRemarksChanging(string value);
+    partial void OnRemarksChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    #endregion
+		
+		public Sale()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SIOR", DbType="VarChar(50)")]
+		public string SIOR
+		{
+			get
+			{
+				return this._SIOR;
+			}
+			set
+			{
+				if ((this._SIOR != value))
+				{
+					this.OnSIORChanging(value);
+					this.SendPropertyChanging();
+					this._SIOR = value;
+					this.SendPropertyChanged("SIOR");
+					this.OnSIORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="BigInt")]
+		public System.Nullable<long> CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					this.OnCustomerIDChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerID = value;
+					this.SendPropertyChanged("CustomerID");
+					this.OnCustomerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="VarChar(50)")]
+		public string CustomerName
+		{
+			get
+			{
+				return this._CustomerName;
+			}
+			set
+			{
+				if ((this._CustomerName != value))
+				{
+					this.OnCustomerNameChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerName = value;
+					this.SendPropertyChanged("CustomerName");
+					this.OnCustomerNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentType", DbType="VarChar(50)")]
+		public string PaymentType
+		{
+			get
+			{
+				return this._PaymentType;
+			}
+			set
+			{
+				if ((this._PaymentType != value))
+				{
+					this.OnPaymentTypeChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentType = value;
+					this.SendPropertyChanged("PaymentType");
+					this.OnPaymentTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remarks", DbType="VarChar(MAX)")]
+		public string Remarks
+		{
+			get
+			{
+				return this._Remarks;
+			}
+			set
+			{
+				if ((this._Remarks != value))
+				{
+					this.OnRemarksChanging(value);
+					this.SendPropertyChanging();
+					this._Remarks = value;
+					this.SendPropertyChanged("Remarks");
+					this.OnRemarksChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="Date")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SaleDetail")]
+	public partial class SaleDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _ID;
+		
+		private System.Nullable<long> _SaleID;
+		
+		private System.Nullable<long> _ProductID;
+		
+		private System.Nullable<decimal> _Qty;
+		
+		private System.Nullable<decimal> _Price;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(long value);
+    partial void OnIDChanged();
+    partial void OnSaleIDChanging(System.Nullable<long> value);
+    partial void OnSaleIDChanged();
+    partial void OnProductIDChanging(System.Nullable<long> value);
+    partial void OnProductIDChanged();
+    partial void OnQtyChanging(System.Nullable<decimal> value);
+    partial void OnQtyChanged();
+    partial void OnPriceChanging(System.Nullable<decimal> value);
+    partial void OnPriceChanged();
+    #endregion
+		
+		public SaleDetail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleID", DbType="BigInt")]
+		public System.Nullable<long> SaleID
+		{
+			get
+			{
+				return this._SaleID;
+			}
+			set
+			{
+				if ((this._SaleID != value))
+				{
+					this.OnSaleIDChanging(value);
+					this.SendPropertyChanging();
+					this._SaleID = value;
+					this.SendPropertyChanged("SaleID");
+					this.OnSaleIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="BigInt")]
+		public System.Nullable<long> ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this.OnProductIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductID = value;
+					this.SendPropertyChanged("ProductID");
+					this.OnProductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qty", DbType="Money")]
+		public System.Nullable<decimal> Qty
+		{
+			get
+			{
+				return this._Qty;
+			}
+			set
+			{
+				if ((this._Qty != value))
+				{
+					this.OnQtyChanging(value);
+					this.SendPropertyChanging();
+					this._Qty = value;
+					this.SendPropertyChanged("Qty");
+					this.OnQtyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
+	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _ID;
+		
+		private string _Name;
+		
+		private string _Mobile;
+		
+		private string _Phone;
+		
+		private string _Email;
+		
+		private string _CompleteAddress;
+		
+		private System.Nullable<System.DateTime> _DateCreated;
+		
+		private System.Nullable<System.DateTime> _DateModified;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(long value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnMobileChanging(string value);
+    partial void OnMobileChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnCompleteAddressChanging(string value);
+    partial void OnCompleteAddressChanged();
+    partial void OnDateCreatedChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateCreatedChanged();
+    partial void OnDateModifiedChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateModifiedChanged();
+    #endregion
+		
+		public Customer()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="VarChar(50)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this.OnMobileChanging(value);
+					this.SendPropertyChanging();
+					this._Mobile = value;
+					this.SendPropertyChanged("Mobile");
+					this.OnMobileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(50)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompleteAddress", DbType="VarChar(MAX)")]
+		public string CompleteAddress
+		{
+			get
+			{
+				return this._CompleteAddress;
+			}
+			set
+			{
+				if ((this._CompleteAddress != value))
+				{
+					this.OnCompleteAddressChanging(value);
+					this.SendPropertyChanging();
+					this._CompleteAddress = value;
+					this.SendPropertyChanged("CompleteAddress");
+					this.OnCompleteAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateCreated
+		{
+			get
+			{
+				return this._DateCreated;
+			}
+			set
+			{
+				if ((this._DateCreated != value))
+				{
+					this.OnDateCreatedChanging(value);
+					this.SendPropertyChanging();
+					this._DateCreated = value;
+					this.SendPropertyChanged("DateCreated");
+					this.OnDateCreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateModified", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateModified
+		{
+			get
+			{
+				return this._DateModified;
+			}
+			set
+			{
+				if ((this._DateModified != value))
+				{
+					this.OnDateModifiedChanging(value);
+					this.SendPropertyChanging();
+					this._DateModified = value;
+					this.SendPropertyChanged("DateModified");
+					this.OnDateModifiedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductHistory")]
+	public partial class ProductHistory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _ID;
+		
+		private System.Nullable<long> _ProductID;
+		
+		private System.Nullable<decimal> _QtyIn;
+		
+		private System.Nullable<decimal> _QtyOut;
+		
+		private System.Nullable<decimal> _QtyAdjustment;
+		
+		private System.Nullable<decimal> _QtyCurrent;
+		
+		private string _TransType;
+		
+		private string _Remarks;
+		
+		private string _Name;
+		
+		private string _SupCus;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(long value);
+    partial void OnIDChanged();
+    partial void OnProductIDChanging(System.Nullable<long> value);
+    partial void OnProductIDChanged();
+    partial void OnQtyInChanging(System.Nullable<decimal> value);
+    partial void OnQtyInChanged();
+    partial void OnQtyOutChanging(System.Nullable<decimal> value);
+    partial void OnQtyOutChanged();
+    partial void OnQtyAdjustmentChanging(System.Nullable<decimal> value);
+    partial void OnQtyAdjustmentChanged();
+    partial void OnQtyCurrentChanging(System.Nullable<decimal> value);
+    partial void OnQtyCurrentChanged();
+    partial void OnTransTypeChanging(string value);
+    partial void OnTransTypeChanged();
+    partial void OnRemarksChanging(string value);
+    partial void OnRemarksChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSupCusChanging(string value);
+    partial void OnSupCusChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    #endregion
+		
+		public ProductHistory()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="BigInt")]
+		public System.Nullable<long> ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this.OnProductIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductID = value;
+					this.SendPropertyChanged("ProductID");
+					this.OnProductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtyIn", DbType="Money")]
+		public System.Nullable<decimal> QtyIn
+		{
+			get
+			{
+				return this._QtyIn;
+			}
+			set
+			{
+				if ((this._QtyIn != value))
+				{
+					this.OnQtyInChanging(value);
+					this.SendPropertyChanging();
+					this._QtyIn = value;
+					this.SendPropertyChanged("QtyIn");
+					this.OnQtyInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtyOut", DbType="Money")]
+		public System.Nullable<decimal> QtyOut
+		{
+			get
+			{
+				return this._QtyOut;
+			}
+			set
+			{
+				if ((this._QtyOut != value))
+				{
+					this.OnQtyOutChanging(value);
+					this.SendPropertyChanging();
+					this._QtyOut = value;
+					this.SendPropertyChanged("QtyOut");
+					this.OnQtyOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtyAdjustment", DbType="Money")]
+		public System.Nullable<decimal> QtyAdjustment
+		{
+			get
+			{
+				return this._QtyAdjustment;
+			}
+			set
+			{
+				if ((this._QtyAdjustment != value))
+				{
+					this.OnQtyAdjustmentChanging(value);
+					this.SendPropertyChanging();
+					this._QtyAdjustment = value;
+					this.SendPropertyChanged("QtyAdjustment");
+					this.OnQtyAdjustmentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtyCurrent", DbType="Money")]
+		public System.Nullable<decimal> QtyCurrent
+		{
+			get
+			{
+				return this._QtyCurrent;
+			}
+			set
+			{
+				if ((this._QtyCurrent != value))
+				{
+					this.OnQtyCurrentChanging(value);
+					this.SendPropertyChanging();
+					this._QtyCurrent = value;
+					this.SendPropertyChanged("QtyCurrent");
+					this.OnQtyCurrentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransType", DbType="VarChar(50)")]
+		public string TransType
+		{
+			get
+			{
+				return this._TransType;
+			}
+			set
+			{
+				if ((this._TransType != value))
+				{
+					this.OnTransTypeChanging(value);
+					this.SendPropertyChanging();
+					this._TransType = value;
+					this.SendPropertyChanged("TransType");
+					this.OnTransTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remarks", DbType="VarChar(50)")]
+		public string Remarks
+		{
+			get
+			{
+				return this._Remarks;
+			}
+			set
+			{
+				if ((this._Remarks != value))
+				{
+					this.OnRemarksChanging(value);
+					this.SendPropertyChanging();
+					this._Remarks = value;
+					this.SendPropertyChanged("Remarks");
+					this.OnRemarksChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupCus", DbType="VarChar(500)")]
+		public string SupCus
+		{
+			get
+			{
+				return this._SupCus;
+			}
+			set
+			{
+				if ((this._SupCus != value))
+				{
+					this.OnSupCusChanging(value);
+					this.SendPropertyChanging();
+					this._SupCus = value;
+					this.SendPropertyChanged("SupCus");
+					this.OnSupCusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Supplier")]
+	public partial class Supplier : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _ID;
+		
+		private string _Name;
+		
+		private string _Mobile;
+		
+		private string _Phone;
+		
+		private string _Email;
+		
+		private string _CompleteAddress;
+		
+		private System.Nullable<System.DateTime> _DateCreated;
+		
+		private System.Nullable<System.DateTime> _DateModified;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(long value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnMobileChanging(string value);
+    partial void OnMobileChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnCompleteAddressChanging(string value);
+    partial void OnCompleteAddressChanged();
+    partial void OnDateCreatedChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateCreatedChanged();
+    partial void OnDateModifiedChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateModifiedChanged();
+    #endregion
+		
+		public Supplier()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="VarChar(50)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this.OnMobileChanging(value);
+					this.SendPropertyChanging();
+					this._Mobile = value;
+					this.SendPropertyChanged("Mobile");
+					this.OnMobileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(50)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompleteAddress", DbType="VarChar(MAX)")]
+		public string CompleteAddress
+		{
+			get
+			{
+				return this._CompleteAddress;
+			}
+			set
+			{
+				if ((this._CompleteAddress != value))
+				{
+					this.OnCompleteAddressChanging(value);
+					this.SendPropertyChanging();
+					this._CompleteAddress = value;
+					this.SendPropertyChanged("CompleteAddress");
+					this.OnCompleteAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateCreated
+		{
+			get
+			{
+				return this._DateCreated;
+			}
+			set
+			{
+				if ((this._DateCreated != value))
+				{
+					this.OnDateCreatedChanging(value);
+					this.SendPropertyChanging();
+					this._DateCreated = value;
+					this.SendPropertyChanged("DateCreated");
+					this.OnDateCreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateModified", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateModified
+		{
+			get
+			{
+				return this._DateModified;
+			}
+			set
+			{
+				if ((this._DateModified != value))
+				{
+					this.OnDateModifiedChanging(value);
+					this.SendPropertyChanging();
+					this._DateModified = value;
+					this.SendPropertyChanged("DateModified");
+					this.OnDateModifiedChanged();
 				}
 			}
 		}
@@ -1866,6 +2934,8 @@ namespace iwork.autobits.inventory.Model
 		
 		private string _Description;
 		
+		private string _SupCus;
+		
 		private System.Nullable<decimal> _QtyIn;
 		
 		private System.Nullable<decimal> _QtyOut;
@@ -1946,6 +3016,22 @@ namespace iwork.autobits.inventory.Model
 				if ((this._Description != value))
 				{
 					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupCus", DbType="VarChar(500)")]
+		public string SupCus
+		{
+			get
+			{
+				return this._SupCus;
+			}
+			set
+			{
+				if ((this._SupCus != value))
+				{
+					this._SupCus = value;
 				}
 			}
 		}
@@ -2090,6 +3176,8 @@ namespace iwork.autobits.inventory.Model
 		
 		private string _Description;
 		
+		private string _SupCus;
+		
 		private System.Nullable<decimal> _QtyIn;
 		
 		private System.Nullable<decimal> _QtyOut;
@@ -2170,6 +3258,22 @@ namespace iwork.autobits.inventory.Model
 				if ((this._Description != value))
 				{
 					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupCus", DbType="VarChar(500)")]
+		public string SupCus
+		{
+			get
+			{
+				return this._SupCus;
+			}
+			set
+			{
+				if ((this._SupCus != value))
+				{
+					this._SupCus = value;
 				}
 			}
 		}

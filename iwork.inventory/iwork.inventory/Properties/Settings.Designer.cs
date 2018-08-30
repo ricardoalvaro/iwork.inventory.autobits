@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iwork.autobits.inventory.Properties {
+namespace  iwork.autobits.inventory.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,7 +26,7 @@ namespace iwork.autobits.inventory.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WINDOWS-PC\\MSSQLSERVER2012;Initial Catalog=ReUsableDBWinform;Persist " +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WINDOWS-PC\\MSSQLSERVER2012;Initial Catalog=AutoBitsInventory;Persist " +
             "Security Info=True;User ID=sa;Password=abc123!@#")]
         public string ReUsableDBWinformConnectionString {
             get {

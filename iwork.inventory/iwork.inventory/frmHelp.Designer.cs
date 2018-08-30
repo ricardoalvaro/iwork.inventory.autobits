@@ -1,4 +1,4 @@
-﻿namespace iwork.inventory
+﻿namespace  iwork.autobits.inventory
 {
     partial class frmHelp
     {
@@ -87,6 +87,7 @@
             this.Name = "frmHelp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmHelp";
+            this.Load += new System.EventHandler(this.frmHelp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

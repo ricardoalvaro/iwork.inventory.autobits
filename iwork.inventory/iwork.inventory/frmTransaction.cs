@@ -1,4 +1,4 @@
-﻿using iwork.autobits.inventory.Model;
+﻿using  iwork.autobits.inventory.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace iwork.inventory
+namespace  iwork.autobits.inventory
 {
     public partial class frmTransaction : Form
     {
@@ -34,8 +34,9 @@ namespace iwork.inventory
             LoadProductAutoComplete();
 
             if (TransactionType == "IN"){InLayout();}
-            else if (TransactionType == "OUT"){OutLayout();            }
+            else if (TransactionType == "OUT"){OutLayout();  }
             else if (TransactionType == "ADJUST"){AdjustLayout();}
+            this.ActiveControl = txtCode;
         }
 
         private void InLayout()
@@ -43,6 +44,19 @@ namespace iwork.inventory
             pnlIdentifier.BackColor = Color.Green;
             btnTransaction.BackColor = Color.Green;
             lblTransName.Text = "STOCK IN";
+
+
+            //supplier config
+            lblSupplier.Visible = true;
+            cmbSupplier.Visible = true;
+            btnAddSupplier.Visible = true;
+            cmbSupplier.DataSource = Database.Suppliers.ToList<Supplier>();
+            cmbSupplier.ValueMember = "ID";
+            cmbSupplier.DisplayMember = "Name";
+
+
+
+
         }
 
         private void OutLayout()
@@ -148,11 +162,13 @@ namespace iwork.inventory
             }
             if (TransactionType == "IN")
             {
-                Database.ProductStockIn(ProductID, decimal.Parse(txtQty.Text), txtRemarks.Text, Helper.FULLNAME);
+                Supplier supp = cmbSupplier.SelectedItem as Supplier;
+
+                Database.ProductStockIn(ProductID, decimal.Parse(txtQty.Text), txtRemarks.Text, Helper.FULLNAME, supp.Name);
             }
             else if (TransactionType == "OUT")
             {
-                Database.ProductStockOut(ProductID, decimal.Parse(txtQty.Text), txtRemarks.Text, Helper.FULLNAME);
+                //Database.ProductStockOut(ProductID, decimal.Parse(txtQty.Text), txtRemarks.Text, Helper.FULLNAME);
             }
             else if (TransactionType == "ADJUST")
             {
@@ -199,6 +215,19 @@ namespace iwork.inventory
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAddSupplier_Click(object sender, EventArgs e)
+        {
+            frmSupplierManage manage = new frmSupplierManage(0);
+            manage.StartPosition = FormStartPosition.CenterParent;
+            manage.ShowDialog();
+
+            Database = new DatabaseDataContext();
+            cmbSupplier.DataSource = Database.Suppliers.ToList<Supplier>();
+            cmbSupplier.ValueMember = "ID";
+            cmbSupplier.DisplayMember = "Name";
+
         }
     }
 }

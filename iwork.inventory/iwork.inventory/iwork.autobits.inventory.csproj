@@ -47,6 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerManage.Designer.cs">
+      <DependentUpon>frmCustomerManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExpense.Designer.cs">
+      <DependentUpon>frmExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExpenseManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExpenseManage.Designer.cs">
+      <DependentUpon>frmExpenseManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +88,18 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasterList.Designer.cs">
+      <DependentUpon>frmMasterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasterListManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasterListManage.Designer.cs">
+      <DependentUpon>frmMasterListManage.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProducts.cs">
       <SubType>Form</SubType>
@@ -83,6 +119,24 @@
     <Compile Include="frmReports.Designer.cs">
       <DependentUpon>frmReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSale.Designer.cs">
+      <DependentUpon>frmSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupplierManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupplierManage.Designer.cs">
+      <DependentUpon>frmSupplierManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +155,12 @@
     <Compile Include="frmUsersManage.Designer.cs">
       <DependentUpon>frmUsersManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVoidQty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoidQty.Designer.cs">
+      <DependentUpon>frmVoidQty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="MDIMaster.cs">
       <SubType>Form</SubType>
@@ -115,6 +175,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerManage.resx">
+      <DependentUpon>frmCustomerManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExpense.resx">
+      <DependentUpon>frmExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExpenseManage.resx">
+      <DependentUpon>frmExpenseManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHelp.resx">
       <DependentUpon>frmHelp.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +195,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterList.resx">
+      <DependentUpon>frmMasterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterListManage.resx">
+      <DependentUpon>frmMasterListManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProducts.resx">
       <DependentUpon>frmProducts.cs</DependentUpon>
@@ -133,6 +211,15 @@
     <EmbeddedResource Include="frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSale.resx">
+      <DependentUpon>frmSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupplierManage.resx">
+      <DependentUpon>frmSupplierManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTransaction.resx">
       <DependentUpon>frmTransaction.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsersManage.resx">
       <DependentUpon>frmUsersManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVoidQty.resx">
+      <DependentUpon>frmVoidQty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIMaster.resx">
       <DependentUpon>MDIMaster.cs</DependentUpon>

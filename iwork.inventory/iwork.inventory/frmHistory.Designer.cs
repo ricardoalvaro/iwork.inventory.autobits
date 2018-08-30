@@ -1,4 +1,4 @@
-﻿namespace iwork.inventory
+﻿namespace  iwork.autobits.inventory
 {
     partial class frmHistory
     {
@@ -31,6 +31,7 @@
             this.grv = new System.Windows.Forms.DataGridView();
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockOUT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockADJUST = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +50,7 @@
             this.grv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Code,
             this.Description,
+            this.Column1,
             this.Stock,
             this.StockOUT,
             this.StockADJUST,
@@ -61,23 +63,30 @@
             this.grv.Name = "grv";
             this.grv.ReadOnly = true;
             this.grv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grv.Size = new System.Drawing.Size(1112, 600);
+            this.grv.Size = new System.Drawing.Size(1287, 600);
             this.grv.TabIndex = 8;
             // 
             // Code
             // 
-            this.Code.HeaderText = "Code";
+            this.Code.HeaderText = "CODE";
             this.Code.Name = "Code";
             this.Code.ReadOnly = true;
             this.Code.Width = 150;
             // 
             // Description
             // 
-            this.Description.HeaderText = "Description";
+            this.Description.HeaderText = "DESC";
             this.Description.MinimumWidth = 50;
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
             this.Description.Width = 150;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ACCOUNT";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 250;
             // 
             // Stock
             // 
@@ -108,14 +117,14 @@
             // 
             // LastTransaction
             // 
-            this.LastTransaction.HeaderText = "Last Transaction";
+            this.LastTransaction.HeaderText = "DATE";
             this.LastTransaction.Name = "LastTransaction";
             this.LastTransaction.ReadOnly = true;
             this.LastTransaction.Width = 200;
             // 
             // Remarks
             // 
-            this.Remarks.HeaderText = "Remarks";
+            this.Remarks.HeaderText = "REMARKS";
             this.Remarks.Name = "Remarks";
             this.Remarks.ReadOnly = true;
             this.Remarks.Width = 300;
@@ -125,10 +134,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1112, 600);
+            this.ClientSize = new System.Drawing.Size(1287, 600);
             this.Controls.Add(this.grv);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHistory";
             this.Text = "frmHistory";
             this.Load += new System.EventHandler(this.frmHistory_Load);
@@ -142,6 +151,7 @@
         private System.Windows.Forms.DataGridView grv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Code;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockOUT;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockADJUST;

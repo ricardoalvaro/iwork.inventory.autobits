@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace iwork.inventory
+namespace  iwork.autobits.inventory
 {
     static class Program
     {
@@ -18,6 +18,11 @@ namespace iwork.inventory
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
             //Application.Run(new MDIMaster());
+            //Application.Run(new frmCustomer());
+            //Application.Run(new frmSupplier());
+            //Application.Run(new frmExpense());
+            //Application.Run(new frmSale());
+            //Application.Run(new frmMasterList());
         }
     }
 }

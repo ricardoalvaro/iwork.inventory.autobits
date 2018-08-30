@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iwork.autobits.inventory.Model;
+using  iwork.autobits.inventory.Model;
 
-namespace iwork.inventory
+namespace  iwork.autobits.inventory
 {
     public partial class frmLogin : Form
     {

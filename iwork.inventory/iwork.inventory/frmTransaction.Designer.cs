@@ -1,4 +1,4 @@
-﻿namespace iwork.inventory
+﻿namespace  iwork.autobits.inventory
 {
     partial class frmTransaction
     {
@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransaction));
             this.pnlIdentifier = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTransName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -45,7 +46,9 @@
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.REMARKS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.lblSupplier = new System.Windows.Forms.Label();
+            this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.btnAddSupplier = new System.Windows.Forms.Button();
             this.pnlIdentifier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -66,6 +69,27 @@
             this.pnlIdentifier.Name = "pnlIdentifier";
             this.pnlIdentifier.Size = new System.Drawing.Size(1093, 43);
             this.pnlIdentifier.TabIndex = 10;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(127)))), ((int)(((byte)(172)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(104)))), ((int)(((byte)(142)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(104)))), ((int)(((byte)(142)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(949, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(144, 43);
+            this.btnClose.TabIndex = 47;
+            this.btnClose.Text = "CLOSE";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pictureBox2
             // 
@@ -91,6 +115,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAddSupplier);
+            this.groupBox1.Controls.Add(this.cmbSupplier);
+            this.groupBox1.Controls.Add(this.lblSupplier);
             this.groupBox1.Controls.Add(this.txtRemarks);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnTransaction);
@@ -100,7 +127,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(15, 76);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(383, 399);
+            this.groupBox1.Size = new System.Drawing.Size(383, 443);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Details";
@@ -109,7 +136,7 @@
             // 
             this.txtRemarks.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRemarks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtRemarks.Location = new System.Drawing.Point(20, 237);
+            this.txtRemarks.Location = new System.Drawing.Point(20, 227);
             this.txtRemarks.Margin = new System.Windows.Forms.Padding(4);
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(337, 41);
@@ -120,7 +147,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 214);
+            this.label3.Location = new System.Drawing.Point(16, 204);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 19);
@@ -133,7 +160,7 @@
             this.btnTransaction.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnTransaction.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransaction.ForeColor = System.Drawing.Color.White;
-            this.btnTransaction.Location = new System.Drawing.Point(3, 311);
+            this.btnTransaction.Location = new System.Drawing.Point(3, 355);
             this.btnTransaction.Name = "btnTransaction";
             this.btnTransaction.Size = new System.Drawing.Size(377, 85);
             this.btnTransaction.TabIndex = 35;
@@ -145,7 +172,7 @@
             // 
             this.txtQty.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtQty.Location = new System.Drawing.Point(20, 156);
+            this.txtQty.Location = new System.Drawing.Point(20, 146);
             this.txtQty.Margin = new System.Windows.Forms.Padding(4);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(121, 41);
@@ -156,7 +183,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 133);
+            this.label2.Location = new System.Drawing.Point(16, 123);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 19);
@@ -173,7 +200,7 @@
             this.txtCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(337, 41);
-            this.txtCode.TabIndex = 32;
+            this.txtCode.TabIndex = 0;
             this.txtCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyDown);
             this.txtCode.Leave += new System.EventHandler(this.txtCode_Leave);
             // 
@@ -235,33 +262,47 @@
             this.REMARKS.ReadOnly = true;
             this.REMARKS.Width = 300;
             // 
-            // btnClose
+            // lblSupplier
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(127)))), ((int)(((byte)(172)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(104)))), ((int)(((byte)(142)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(104)))), ((int)(((byte)(142)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(949, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(144, 43);
-            this.btnClose.TabIndex = 47;
-            this.btnClose.Text = "CLOSE";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplier.Location = new System.Drawing.Point(16, 282);
+            this.lblSupplier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(79, 19);
+            this.lblSupplier.TabIndex = 38;
+            this.lblSupplier.Text = "SUPPLIER";
+            this.lblSupplier.Visible = false;
+            // 
+            // cmbSupplier
+            // 
+            this.cmbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSupplier.FormattingEnabled = true;
+            this.cmbSupplier.Location = new System.Drawing.Point(20, 305);
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(309, 31);
+            this.cmbSupplier.TabIndex = 39;
+            this.cmbSupplier.Visible = false;
+            // 
+            // btnAddSupplier
+            // 
+            this.btnAddSupplier.BackColor = System.Drawing.Color.Green;
+            this.btnAddSupplier.ForeColor = System.Drawing.Color.White;
+            this.btnAddSupplier.Location = new System.Drawing.Point(348, 305);
+            this.btnAddSupplier.Name = "btnAddSupplier";
+            this.btnAddSupplier.Size = new System.Drawing.Size(29, 31);
+            this.btnAddSupplier.TabIndex = 40;
+            this.btnAddSupplier.Text = "+";
+            this.btnAddSupplier.UseVisualStyleBackColor = false;
+            this.btnAddSupplier.Visible = false;
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
             // frmTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1093, 487);
+            this.ClientSize = new System.Drawing.Size(1093, 551);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlIdentifier);
@@ -301,5 +342,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
         private System.Windows.Forms.DataGridViewTextBoxColumn REMARKS;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ComboBox cmbSupplier;
+        private System.Windows.Forms.Label lblSupplier;
+        private System.Windows.Forms.Button btnAddSupplier;
     }
 }

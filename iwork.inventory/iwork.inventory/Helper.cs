@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iwork.autobits.inventory.Model;
+using  iwork.autobits.inventory.Model;
 using System.Windows.Forms;
 
-namespace iwork.inventory
+namespace  iwork.autobits.inventory
 {
     public static class Helper
     {

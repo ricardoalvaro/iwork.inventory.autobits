@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace iwork.inventory
+namespace  iwork.autobits.inventory
 {
     public partial class frmHelp : Form
     {
         public frmHelp()
         {
             InitializeComponent();
+        }
+
+        private void frmHelp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

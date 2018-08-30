@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace iwork.inventory
+namespace iwork.autobits.inventory
 {
     public partial class MDIMaster : Form
     {
@@ -134,6 +134,91 @@ namespace iwork.inventory
                 frmReports.MdiParent = this;
                 frmReports.WindowState = FormWindowState.Maximized;
                 frmReports.Show();
+            }
+        }
+
+        private frmSale frmSale = null;
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmSale == null)
+                frmSale = new frmSale();
+
+            if (frmSale != null)
+            {
+                if (frmSale.IsDisposed)
+                    frmSale = new frmSale();
+
+                frmSale.MdiParent = this;
+                frmSale.WindowState = FormWindowState.Maximized;
+                frmSale.Show();
+            }
+        }
+
+        private frmCustomer frmCustomer = null;
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmCustomer == null)
+                frmCustomer = new frmCustomer();
+
+            if (frmCustomer != null)
+            {
+                if (frmCustomer.IsDisposed)
+                    frmCustomer = new frmCustomer();
+
+                frmCustomer.MdiParent = this;
+                frmCustomer.WindowState = FormWindowState.Maximized;
+                frmCustomer.Show();
+            }
+        }
+
+        private frmSupplier frmSupplier = null;
+        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmSupplier == null)
+                frmSupplier = new frmSupplier();
+
+            if (frmSupplier != null)
+            {
+                if (frmSupplier.IsDisposed)
+                    frmSupplier = new frmSupplier();
+
+                frmSupplier.MdiParent = this;
+                frmSupplier.WindowState = FormWindowState.Maximized;
+                frmSupplier.Show();
+            }
+        }
+
+        private frmExpense frmExpense = null;
+        private void expenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmExpense == null)
+                frmExpense = new frmExpense();
+
+            if (frmExpense != null)
+            {
+                if (frmExpense.IsDisposed)
+                    frmExpense = new frmExpense();
+
+                frmExpense.MdiParent = this;
+                frmExpense.WindowState = FormWindowState.Maximized;
+                frmExpense.Show();
+            }
+        }
+
+        private frmMasterList frmMasterList = null;
+        private void masterListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmMasterList == null)
+                frmMasterList = new frmMasterList();
+
+            if (frmMasterList != null)
+            {
+                if (frmMasterList.IsDisposed)
+                    frmMasterList = new frmMasterList();
+
+                frmMasterList.MdiParent = this;
+                frmMasterList.WindowState = FormWindowState.Maximized;
+                frmMasterList.Show();
             }
         }
     }
